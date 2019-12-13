@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% set pageTitle ="Ajouter un livre" %}
+
+{% block title %}{{pageTitle}}{% endblock %}
+
+{% block sidebar %}
+<ul class="nav flex-column">
+    <li class="nav-item">
+        <a class="nav-link active" href="{{ url("homepage") }}">Accueil</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url("books:index") }}">Livres</a>
+    </li>
+    <hr>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url("books:create") }}">Ajouter un livre</a>
+    </li>
+</ul>
+{% endblock %}
+
+{% block body %}
+    <h2>{{pageTitle}}</h2>
+
+    {# Form d'ajout d'un livre... #}
+    {% include "books/form.html.twig" %}
+
+
+{% endblock %}
+

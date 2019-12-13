@@ -1,0 +1,34 @@
+{{ form_start(form, {'attr':{'novalidate':'novalidate'}}) }}
+
+    {# Book Title #}
+    <div class="form-group row">
+        {{ form_label(form.title) }}
+        <div class="col-8">
+            {{ form_errors(form.title) }}
+            {{ form_widget(form.title) }}
+            {{ form_help(form.title) }}
+        </div>
+    </div>
+
+    {# Book Description #}
+    <div class="form-group row">
+        {{ form_label(form.description) }}
+        <div class="col-8">
+            {{ form_errors(form.description) }}
+            {{ form_widget(form.description) }}
+            {{ form_help(form.description) }}
+        </div>
+    </div>
+
+    {# Book Price #}
+    <div class="form-group row">
+        {{ form_label(form.price) }}
+        <div class="col-8">
+            {{ form_errors(form.price) }}
+            {{ form_widget(form.price) }}
+            {{ form_help(form.price) }}
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-xs btn-success">{{ button_label|default('Ajouter') }} un livre</button>
+{{ form_end(form) }}

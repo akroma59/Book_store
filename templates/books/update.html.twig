@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% set pageTitle ="Modifier le livre "~ book.title %}
+
+{% block title %}{{pageTitle}}{% endblock %}
+
+{% block sidebar %}
+<ul class="nav flex-column">
+    <li class="nav-item">
+        <a class="nav-link active" href="{{ url("homepage") }}">Accueil</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url("books:index") }}">Livres</a>
+    </li>
+    <hr>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url("books:create") }}">Ajouter un livre</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url("books:delete",{'id':book.id}) }}">Supprimer le livre</a>
+    </li>
+    <hr>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url("books:read",{'id':book.id}) }}">Retour</a>
+    </li>
+</ul>
+{% endblock %}
+
+{% block body %}
+    <h2>{{pageTitle}}</h2>
+
+    {# Form de modification d'un livre... #}
+    {{ include ("books/form.html.twig",{'button_label': 'Modifier'}) }}
+
+{% endblock %}
+

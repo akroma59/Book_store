@@ -1,0 +1,8 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+
+# books-alt:
+#     path: /books-alt
+#     controller: App\Controller\BooksController::books_alt
